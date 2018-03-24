@@ -1,0 +1,14 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% get_static_prefix %}event-style.css" />
+<script src="{% get_static_prefix %}event-script.js"></script>
+
+    {% if document %}
+		<div id="newsletter_preview" class="newsletter_preview" width="90%" height="90%">
+			<object data="{{ document.docfile.url }}" type="application/pdf" width="100%" height="700px">
+			  <p>Alternative text - include a link <a href="{{ document.docfile.url }}">to the PDF!</a></p>
+			</object>
+		</div>
+    {% else %}
+        <p>No document found.</p>
+    {% endif %}

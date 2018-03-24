@@ -1,0 +1,15 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% get_static_prefix %}doc-styles.css" />
+
+    {% if documents %}
+        <ul id="archive_list" class="highlight doc-list">
+        {% for document in documents %}
+            <li><a href="{{ document.docfile.url }}" target="_blank">{{ document.docname }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <ul id="archive_list" class="highlight doc-list">
+        <li>No documents found</li>
+        </ul>
+    {% endif %}

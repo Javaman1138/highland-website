@@ -1,0 +1,37 @@
+{% extends 'base-two-col.html' %}
+
+{% block left_side %}
+		<span class="title">Meeting Minutes</span>
+		{% autoescape off %}{{ meeting_minutes_view }}{% endautoescape %}
+        	<br>
+		<span class="title">Forms</span>
+		{% autoescape off %}{{ forms_view }}{% endautoescape %}
+		<br>
+		<span class="title">Links</span>
+		<div class="news">
+			<ul id="event_list" class="highlight doc-list">
+
+			<li><a href="http://www.pta.org/">National PTA</a></li>
+			<li><a href="http://www.ohiopta.org/">Ohio PTA</a></li> 
+			<li><a href="http://www.smfschools.org/">SMF Schools</a></li> 
+		</div>
+		<br>
+{% endblock %}
+
+{% block right_side %}
+	<span class="title">Want to be more involved in your child's school? Here's your chance!</span>
+		<div class="news">
+			<img style="width:300px" class="news_image" src="/static/images/pta-logo.png">
+			<p>We will be seeking volunteers for various committees in the fall.  Stay tuned for details. </p>
+		<hr>
+		<br>
+	<span class="title">Join the PTA</span>
+		<div class="news">
+			<img style="width:300px" class="news_image" src="/static/images/pta-logo.png">
+			<p>It's never too late to join the PTA.  Family memberships are only $10. 
+			Download a copy of the form 
+			<a href="http://highlandpta.org/media/documents/uploads/2015_membership_form.pdf">here</a> </p>
+			<p>Your membership helps support great events and programs, like the Root Beer Float Social and COSI on Wheels
+			 coming in December. </p>
+		</div>
+{% endblock %}

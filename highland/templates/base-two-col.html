@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block main_content %}
+  <div class="two_column_container">
+
+    <div id="left" class="left_column">
+    	{% block left_side %}{% endblock %}
+
+    </div>  <!--left column -->
+
+    <div id="right" class="right_column">
+    	{% block right_side %}{% endblock %}
+
+    </div>  <!--right column -->
+
+  </div>  <!--two column container -->
+{% endblock %}

@@ -1,0 +1,40 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% get_static_prefix %}committee-style.css" />
+<script src="{% get_static_prefix %}committee-script.js"></script>
+
+    <div id="committee_list" class="committee_div">
+    <table id="committee_table" class="committees_table">
+{% if committee_chairs %}
+    {% for chair in committee_chairs %}
+		<tr class='committees_row'>
+			<td id='td_position_{{chair.idx}}' class='committee_left'>
+				<span id='position_{{chair.idx}}'>{{chair.committee}}</span>
+			</td>
+			<td class='committee_center'>....</td>
+			<td id='td_name_{{chair.idx}}' class='committee_right'>
+			    <span id='name_{{chair.idx}}'>{{chair.name}}</span>
+			    {% if chair.email1 and chair.email2 %}
+				<span onclick='showPopup(event, {{chair.idx}});'><img src="/static/images/email_open.png" class="info_image"></span>
+				<input id='em1_{{chair.idx}}' value='{{chair.email1}}' type='hidden'>
+				<input id='em2_{{chair.idx}}' value='{{chair.email2}}' type='hidden'>
+				{% endif %}
+			</td>
+	    </tr>
+    {% endfor %}
+{% else %}
+    {% for comm in committee_list %}
+            <tr class='committees_row'>
+		<td id='name' class='committee_center'>{{comm.committee_title}}</td>
+	    </tr>
+    {% endfor %}
+{% endif %}
+<div id="emailPopup" class="popup">
+	<span id="closePopup" class="popup-close">CLOSE</span>
+  	<div id="popupContent" class="popup-content">
+			<div id="showName"></div>
+			<div id="showEmail"><a id="link" href=""></a></div>
+	</div>
+</div>
+    </table>
+    </div>

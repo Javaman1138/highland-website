@@ -1,0 +1,63 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% get_static_prefix%}event-style.css" />
+
+{% if rotation_days %}
+<span class="title">Rotation Days This Week</span>
+<br>
+<table>
+   {% for rotation_day in rotation_days %}
+	<td class="tablet_holder">
+	{% if rotation_day.date == today %}
+	<table class="tablet_today"> 
+	{% else %}
+        <table class="tablet">
+	{% endif %}
+
+		<tr>
+		<td class="tablet_dayofweek">
+		{{rotation_day.date|date:"D" }}</td></tr>
+	{% if rotation_day.day == 'X' %}
+		<tr><td class="tablet_letter no_school">
+		    No<br>School
+	{% else %}
+		<tr><td class="tablet_letter">
+		    {{rotation_day.day}}
+	{% endif %}
+		</td></tr>
+	</table>
+	</td>
+   {% endfor %}
+</table>
+<br><br>
+{% endif %}
+
+<span class="title">Upcoming Eventsk</span>
+{% if upcoming_list %}
+    <ul id="event_list" class="events">
+    {% for event in upcoming_list %}
+		<li class='event'>
+			<div id='event-details' class='event-details'>
+				<time class='icon'>
+					<em>{{event.start_date|date:"D"}}</em>
+					<strong>{{event.start_date|date:"N"}}</strong>
+					<span>{{event.start_date|date:"j"}}
+					{% if event.end_date %}
+					-{{event.end_date|date:"j"}}
+					{% endif %}
+					</span>
+				</time>
+			<span>{{ event.event_title }}</span><br>
+			{% if event.event_desc %}
+				<span>{{event.event_desc}}</span><br>
+			{% endif %}
+			{% if event.start_time %}
+				<span>{{event.start_time|time:"P"}}</span>
+			{% endif %}
+			</div>
+	    </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No events are available.</p>
+{% endif %}

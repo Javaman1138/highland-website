@@ -1,0 +1,16 @@
+
+{% extends 'base-two-col.html' %}
+
+
+
+{% block main_content %}
+
+{% if success %}
+<p>Removed email {{email}} from our database</p>
+{% else %}
+<p>Invalid Request, process failed.</p>
+{% endif %}
+
+{% endblock %}
+
+

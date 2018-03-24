@@ -1,0 +1,12 @@
+Hello  {{email_addr}},
+
+You have signed up to be notified of upcoming events from the Highland Elementary PTA.
+
+Emails will be sent weekly.  If there are no events for the upcoming week, then no email will be sent.
+
+Thank you for your support,
+- Highland PTA
+
+
+To unsubscribe, copy and pase highlandpta.org/signup/remove/?email={{email_addr}}&id={{person_id}} into your web browser.
+

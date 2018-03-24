@@ -1,0 +1,13 @@
+{% extends 'base-two-col.html' %}
+{% load tag_lib %}
+{% block left_side %}
+	{% autoescape off %}{{ upcoming_events_view }}{% endautoescape %}
+        <br>
+    <span class="title">Get Reminders</span>
+    {% autoescape off %}{{ signup_view }}{% endautoescape %}
+{% endblock %}
+
+{% block right_side %}
+        <span class="title">Latest News</span>
+	{{ news_items_view|safe }}
+{% endblock %}

@@ -1,0 +1,22 @@
+<html>
+<head>
+<title></title>
+</head>
+
+<body>
+
+{% if news_item %}
+	<div id="news_item_info" class="news_item_info">
+        	<div>
+			<img class="news_item_image" src="/media/{{news_item.news_image}}">
+			<p class="news_highlight">{{news_item.news_title}}</p>
+			<p>{{news_item.news_date}}</p>
+			<p style="font-size:15px">{{news_item.news_long|safe}}</p>
+			</div>
+	</div>
+{% else %}
+    <p>No information is available.</p>
+{% endif %}
+
+</body>
+</html>

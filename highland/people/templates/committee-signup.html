@@ -1,0 +1,37 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% get_static_prefix %}signup-style.css" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+<script src="{% get_static_prefix %}committee-signup-script.js"></script>
+
+<div id="signup_div" class="signup_div">
+
+<div id="input_div">
+<p>If you'd like to signup for a committee, please fill out the information below.  You will be
+contacted by the PTA or committee chairperson.</p>
+<div id="error_div">
+<ul id="error_list">
+</ul>
+</div>
+<form action="/people/committee/signup" method="POST" id="request_signup_form">{% csrf_token %}
+<ul id="signup_fields">
+{{form.as_ul}}
+</ul>
+<input id="signup_button" type="button" value="Sign Up"/>
+
+</form>
+</div>
+
+<div id="success_div">
+<p>You are signed up! A confirmation email
+has been sent to you.
+</p>
+<p id="note">Our email address is
+<span id="our_addr">{{our_addr}}</span>. If you haven't received your confirmation, 
+check and remove us from your spam filters.</p>
+</div>
+
+
+</div>
+

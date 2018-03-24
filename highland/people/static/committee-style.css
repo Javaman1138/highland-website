@@ -1,0 +1,76 @@
+/*
+ * COMMITTEE
+ */
+.committee_div {
+	margin-top: 20px;
+	background-color: #efefef;
+	border: 1px solid #bdbdbd;
+	border-radius: 5px;
+	padding:5px;
+}
+.committees_table {
+	width: 100%;
+}
+.committees_row {
+	display: none;
+	height:30px;
+}
+.committee_left {
+	text-align: right;
+	padding 10px;
+	width: 49%;
+	vertical-align:bottom;
+}
+.committee_center{
+	text-align: center; 
+	width: 20px;
+	vertical-align:bottom;
+}
+.committee_right {
+	text-align: left;
+	padding 10px;
+	vertical-align:bottom;
+	
+}
+.info_image {
+        height: 20px;
+        vertical-align:bottom;
+        cursor:pointer;
+}
+.profile_photo {
+	width: 50px;
+}
+.photo_image {
+	width:50px;
+}
+.big_profile_photo {
+        max-width:200px;
+}
+.big_photo {
+	display: none;
+	position: absolute;
+	width: 250px;
+	height: 250px;
+	padding: 10px;
+	border: 2px solid black;
+	background-color: white;
+	z-index:1002;
+	overflow: auto;
+}
+@media (max-width: 750px) {
+	.committees_table {
+		font-size: 1.0em;
+	}
+}
+#showEmail {
+	word-wrap: break-word;
+}
+.contentLayoutTable {
+	table-layout:fixed;
+	width:100%;
+}
+.contentLayoutTable_left {
+	width:60px;
+}
+
+

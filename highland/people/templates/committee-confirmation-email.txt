@@ -1,0 +1,9 @@
+Hello  {{email_addr}},
+
+You have signed up to be on the {{committee_name}} at Highland Elementary.
+
+You will be contacted soon by a member of the PTA.
+
+Thank you for your support,
+- Highland PTA
+

@@ -1,0 +1,30 @@
+
+Hello %recipient.name%,
+
+You have signed up to be notified of upcoming events from the Highland
+Elementary PTA.
+This weeks events are:
+  {% for event in events %}
+  
+  {{event.event_title}}: {{event.start_date}}
+      {% if event.end_date %}
+          - {{event.end_date}}
+      {% else %}
+          {% if event.start_time and event.end_time %}
+              {{event.start_time}} to {{event.end_time}}
+          {% else %}
+              {% if event.start_time %}
+                 @ {{event.start_time}}
+              {% endif %}
+          {% endif %}
+      {% endif %}
+  {% endfor %}
+
+Visit HighlandPTA.org to get details on events and to volunteer to help.
+
+Thank you for your support,
+- Highland PTA
+
+To unsubscribe, copy and paste this following url in your browser.
+highlandpta.org/signup/remove/?email=%recipient.email%&id=%recipient.id%
+

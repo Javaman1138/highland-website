@@ -1,0 +1,43 @@
+#success_div {
+	display: none;
+}
+#error_div {
+	display: none;
+	color: red;
+}
+#error_list{
+	list-style-type: none;
+}
+.signup_div {
+	padding: 5px;
+	color: black;
+	background-color: #FFFFCC;
+	border-radius: 5px;
+	border: 1px solid #bdbdbd;
+	margin-top:20px;
+}
+#note {
+        font-size:0.7em;
+}
+#request_signup_form input {
+        margin-bottom: 8px;
+}
+#signup_fields {
+        list-style-type: none;
+	margin-left: -30px;
+}
+#signup_button {
+        padding:5px 15px; 
+        background:#ccc; 
+        border:0 none;
+        cursor:pointer;
+        -webkit-border-radius: 5px;
+        border-radius: 5px; 
+        margin-left:25px;
+}
+.errorlist {
+	color: red;
+}
+.error_field {
+    border: 1px solid red;
+}

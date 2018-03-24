@@ -1,0 +1,132 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Highland Elementary PTA Notification</title>
+</head>
+
+<body style="margin: 0 0 0 0; background-color: #ffffff;" >
+<div id="wrapper" align="center" style="margin:0 auto; background-color:#ffffff;">
+<table id="wrapper" width="650" border="0" cellspacing="0" cellpadding="0">
+<!-- header -->
+<tr>
+    <td width="650">
+    <a href="http://highlandpta.org">
+        <img src="http://highlandpta.org/static/images/pta-header-sm.png" width="650"
+              alt="Highland Elementary PTA" border="0" style="display:block"></a>
+     </td>
+</tr>
+<!-- end header -->
+
+
+<tr>  <!-- breaker row-->
+    <td width="650">
+        <img src="http://highlandpta.org/static/email-spacer.gif" width="650">
+    </td>
+</tr>
+
+<tr> <!-- content -->
+    <td width="650" style="border-left: 1px solid gray; border-right: 1px solid gray; padding:10px; font-family:Tahoma, Geneva, sans-serif; color:#0066cc">
+		Hello  %recipient.name%,
+		<br>
+		<p>You have signed up for the weekly email from the Highland Elementary PTA.</p>
+
+		{% if events %}
+		<p>Here's what's going on this week:
+		</p>
+
+		<div style="text-align:center; 	padding: 5px; color: black; background-color: #FFFFCC; border-radius: 5px; border: 1px solid #bdbdbd;">
+		  {% for event in events %}
+		  {% if forloop.counter > 1 %}
+		  <hr style="border: 0; height: 1px; background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); background-image: -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); background-image: -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); background-image: -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); ">
+		  {% endif %}
+		  <span style="font-weight:bold; font-size:1.2em;">{{event.event_title}}</span>
+		  <br>
+                  {% if event.event_desc %}
+		  <span style="font-size:1.2em;">{{event.event_desc}}</span>
+		  <br>
+                  {% endif %}
+		  <span style="font-size:1em;">{{event.start_date|date:"l, M d" }}
+			  {% if event.end_date %}
+				  - {{event.end_date|date:"l, M d"}}
+		      {% endif %}
+		  </span>
+		  <br>
+		  {% if event.start_time %}
+		  <span style="font-size:1em;">
+		      {{event.start_time|time:"f a"}}
+			  {% if event.end_time %}
+				  - {{event.end_time|time:"f a"}}
+			  {% endif %}
+		  </span>
+		  <br>
+		  {% endif %}
+		  {% endfor %}
+
+	          {% if newsletter %}
+		     <hr style="border: 0; height: 1px; background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); background-image: -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); background-image: -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); background-image: -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); ">
+		     <br>
+		     <p> We have a newsletter to share as well.
+		       You can view or download it <a href="http://highlandpta.org/meetings/">here</a>.
+		     </p>
+                     <br>
+		  {% endif %}
+
+                </div>
+                <br>
+		Visit <a href="http://highlandpta.org">HighlandPTA.org</a> for details on events or to volunteer to help.<br>
+		{% endif %}
+
+		{% if rotation_list %}
+		     <hr style="border: 0; height: 1px; background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); background-image: -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); background-image: -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); background-image: -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); ">
+		    <p>This week's rotation days are:</p>
+                    <table>
+                        <tr>
+			{% for rotation_day in rotation_list %}
+                        <td style="padding:3px;">
+                            <table style="border: 2px solid gray; border-radius:10px; box-shadow: 5px 5px 5px; height:70px;" >
+                                <tr><td style="width:40px; padding: 3px; text-align:center;">
+                                        {{rotation_day.date|date:"D" }}</td></tr>
+				{% if rotation_day.day == 'X' %}
+                                <tr><td style="color:red; width:40px; font-size:14px; text-align:center;">
+                                        No<br>School</td></tr>
+				{% else %}
+                                <tr><td style="width:40px; font-size:30px; text-align:center;">
+                                        {{rotation_day.day}}</td></tr>
+				{% endif %}
+                            </table>
+                        </td>
+			{% endfor %}
+                        </tr>
+                    </table>
+                    <br>
+                {% endif %}
+
+                {% if extra_msg %}
+		<br>
+		<div style="text-align:left; padding: 5px; color: black; border-radius: 5px; border: 1px solid #bdbdbd; background-color:#eeeeee">
+	          {% for msg in extra_msg %}
+	            <div><p>{{ msg|safe }}</p></div>
+		  {% endfor %}
+		</div>
+		<br>
+		{% endif %}
+		<br>
+		<p>We thank you for your support.</p>
+                <p><img src="http://highlandpta.org/static/images/pta-logo.png" width="150"/></p>
+		</p>
+
+		<br>
+		<p style="font-size:9px;">To unsubscribe, click <a href="http://highlandpta.org/signup/remove/?email=%recipient.email%&id=%recipient.id%">here.</a>
+    </td>
+</tr>
+
+<tr>  <!-- breaker row-->
+    <td width="650">
+        <img src="http://highlandpta.org/static/email-spacer.gif" width="650">
+    </td>
+</tr>
+
+<!-- end content row -->
+</table><!--end #wrapper-->
+</div>
+

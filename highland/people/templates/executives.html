@@ -1,0 +1,50 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% get_static_prefix %}committee-style.css" />
+<script src="{% get_static_prefix %}committee-script.js"></script>
+
+{% if executive_list %}
+    <div id="committee_list" class="committee_div">
+    <table id="executive_table" class="committees_table">
+    {% for executive in executive_list %}
+		<tr class='committees_row'>
+			<td id='td_position_{{executive.idx}}' class='committee_left'>
+				<span id="position_{{executive.idx}}">{{executive.position}}</span>
+			</td>
+			<td class='committee_center'>...</td>
+			<td id='td_name_{{executive.idx}}' class='committee_right'>
+				<span id="name_{{executive.idx}}">{{executive.name}}</span>
+				{% if executive.email1 and executive.email2 %}
+				<span onclick='showPopup(event, {{executive.idx}});'><img src="/static/images/email_open.png" class="info_image"></span>
+				<input id='em1_{{executive.idx}}' value='{{executive.email1}}' type='hidden'>
+				<input id='em2_{{executive.idx}}' value='{{executive.email2}}' type='hidden'>
+				<input id='img_{{executive.idx}}' value='{{executive.photo}}' type='hidden'>
+				{% endif %}
+			</td>
+	    </tr>
+    {% endfor %}
+    </table>
+    </div>
+{% else %}
+    <p>No info available.</p>
+{% endif %}
+<div id="emailPopup" class="popup">
+  		<span id="closePopup" class="popup-close">CLOSE</span>
+  		<div id="popupContent" class="popup-content">
+                    <table class="contentLayoutTable">
+                        <tr><td class="contentLayoutTable_left">
+			<img id="showPhoto" class='profile_photo' src=''>
+                        </td><td class="contentLayoutTable_right">
+			<div id="showName"></div>
+			<div id="showPosition"></div>
+			<div id="showEmail"><a id="link" href=""></a></div>
+                        </td></tr>
+                    </table>
+		</div>
+</div>
+<div id="photoPopup" class="big_photo">
+    <span id="closePopup" class="popup-close">CLOSE</span>
+    <img class='big_profile_photo' id='profilePhoto' src="">
+</div>
+
+

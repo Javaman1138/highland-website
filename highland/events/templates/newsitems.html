@@ -1,0 +1,47 @@
+
+{% if news_list %}
+    <div class="news_table">
+    {% for news_item in news_list %}
+        {% if forloop.counter0 == 6 %}
+	    <div name="moreHistory" style="display:none;">
+	{% endif %}
+        {% if forloop.counter|divisibleby:2 %}
+        	<div class="news-right" class="news_cell">
+        {% else %}
+        	<div class="news_row">
+        	<div class="news-left" class="news_cell">
+        {% endif %}
+	{% if news_item.news_image %}
+		<img class="news_image" src="/media/{{news_item.news_image}}">
+	{% endif %}
+		<p class="news_highlight">{{news_item.news_title}}</p>
+		<p>{{news_item.news_date}}</p>
+		<p>{{news_item.news_long|safe}}
+		  {% if news_item.show_more %}
+		   <br>
+			<button id="more_detail" type="button" class="detail-button" 
+				onClick="showDetails({{news_item.id}});">Read more...
+			</button>
+		  {% endif %}
+		</p>
+            <!-- close div -->
+	    </div>
+	{% if forloop.counter|divisibleby:2 or forloop.last%}
+	<!--close row-->
+	</div>
+	{% endif %}
+    {% endfor %}
+
+    {% if news_list.count > 6 %}
+        <!-- close more -->
+	</div>
+	<button id="moreHistoryBtn" type="button" class="more-button"
+			onClick="showMoreHistory()">&darr; SHOW ME MORE &darr;</button>
+	<button id="lessHistoryBtn" type="button" class="more-button" 
+			style="display:none;" onClick="showLessHistory()">&uarr; SHOW ME LESS &uarr;</button>
+    {% endif %}
+    <!-- close news table -->
+    </div>
+{% else %}
+    <p>No news available.</p>
+{% endif %}

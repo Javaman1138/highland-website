@@ -1,0 +1,45 @@
+{% extends 'base-two-col.html' %}
+
+{% block left_side %}
+	<span class="title">Sign Up</span>
+	{% autoescape off %}{{ signup_view }}{% endautoescape %}
+	<br>
+	<div style="align:center">
+        <img style="align:center" class="medium_image" src="/static/images/pta-logo.png">
+        </div>	
+{% endblock %}
+
+{% block right_side %}
+	<span class="title">What does the PTA do?  We advocate for...</span>
+                <div class="news">
+                        <table id="advocate"><tr>
+			<th>Our Children</th>
+			<th>Faculty and Staff</th>
+			</tr><tr>
+			<td>
+				<li>COSI on Wheels</li>
+				<li>Field Day</li>
+				<li>Movie Night</li>
+				<li>Clasroom Parties</li>
+			</td><td>
+				<li>Staff Appreciation</li>
+				<li>Classroom Support</li>
+			</td>
+			</tr><tr>
+			<th>Families</th>
+			<th>Our School</th>
+			</tr><tr>
+			<td>
+				<li>PTA Meetings with Child Care</li>
+				<li>Family Nights</li>
+				<li>Website, Facebook, Flyers</li>
+			</td><td>
+				<li>Landscaping</li>
+				<li>Facility Improvements</li>
+			</td>
+			</tr></table>
+                </div>
+	<hr>
+	<span class="title">The 2015-16 Executive Board</span>
+	{% autoescape off %}{{ exec_view }}{% endautoescape %}
+{% endblock %}

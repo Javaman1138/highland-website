@@ -1,0 +1,73 @@
+{% extends 'base-two-col.html' %}
+
+{% block left_side %}
+		<span class="title">Background Checks</span>
+		<div class="news">
+			<ul id="event_list" class="highlight">
+			<li>Before you can volunteer with students, you must have a background check and fingerprinting.  
+				This MUST be done annually and can be done at the Board of Education Offices.
+			<br><br>
+			    SMF Schools <br>
+			    4350 Allen Road<br>
+			    Stow, Ohio 
+			<br><br>
+			    Call Jeanne Neel<br>
+			    (330) 639-5445<br>
+			    To Make an Appointment
+			</li> 
+		</div>
+		<br>
+		<span class="title">Business Support</span>
+		<div class="news">
+			<ul id="event_list" class="highlight">
+			<li>We'd like to thank the following businesses for their contributions and help in all our efforts.
+			<br><br>
+				<a href="http://yourlashish.com/" target="_blank">La Shish Grill</a> for their help with the Staff Welcome Back Lunch.<br>
+				<a href="http://neoamusements.com/" target="_blank">NEO Amusements</a> for the movie night screen and projector.<br>
+				<a href="http://www.cbtpopcorn.com//" target="_blank">Crazy But True</a> for the popcorn on movie night.<br>
+				<a href="http://www.neohomepaint.com" target="_blank">N.E.O. Home Residential and Commercial Painting</a> for donating paint to the staff break room.</br>
+			</li> 
+		</div>
+		<br>
+{% endblock %}
+
+{% block right_side %}
+<!--
+	<span class="title">Attention Photographers</span>
+        <img class="medium_image" src="/static/images/phtographer.png">
+	<p>
+        <p style="font-weight:bold;font-size:1.2em">Pictures for the yearbook needed!</p> 
+        <p>Throughout the year as you take pictures at various school events, please consider 
+           sharing them with the yearbook committee.  Halloween Parties, Valentine's parties, 
+           Holiday events, and Classroom activities, we want them!   We look forward to adding 
+           pictures to the yearbook.</p>
+        <p>Simply email them to <a href="mailto:highlandybook@gmail.com">highlandybook@gmail.com</a>. </p>
+
+        <p>If the pictures are too large to email, or you have many pictures to send, you can 
+           create a drop box account (for free) and upload them there.  We will download them 
+           from there.  There is a good tutorial for that 
+           <a href="https://www.youtube.com/watch?v=f27A-RT6lEg" target="_blank"> on YouTube</a>.</p>
+        <p>Thanks for the help!</p>
+	<hr>
+-->
+	<span class="title">Volunteering</span>
+        <img class="medium_image" src="/static/images/volunteers.jpg">
+	<p>
+	Whether in the classroom, at a PTA event, or on a committee, volunteers are always needed and appreciated at Highland!
+	<br><br>
+	You can volunteer anytime.  To volunteer to help on a committee, please contact the chairperson, or any member of the PTA.  
+	We appreciate any help we can get.
+       <br><br>
+	To volunteer in a classroom or to work directly with students, a background check is required. 
+	See the information box  to the left.
+	<hr>
+	<span class="title">Committees</span>
+        <!--
+	<p>If you'd like to help on any committee, please contact the chair person listed below.</p>
+	{% autoescape off %}{{ committee_view }}{% endautoescape %}
+        -->
+        <p>It's never too late to volunteer for a committee.  Simply contact someone on the PTA.  
+           We appreciate any help we can get.  Thank You. 
+        </p>
+	{% autoescape off %}{{ committee_view }}{% endautoescape %}
+{% endblock %}

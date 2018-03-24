@@ -1,0 +1,129 @@
+/*
+ * EVENTS
+ */
+.events {
+	padding: 5px;
+	color: black;
+	background-color: #FFFFCC;
+	border-radius: 5px;
+	border: 1px solid #bdbdbd;
+	list-style-type: none;
+	height:325px;
+}
+
+.event {
+	list-style-type: none;
+	padding-left: 4px;
+	margin-top: 2px;
+	color:black;
+	height: 50px;
+	padding: 5px;
+}
+.event_image {
+	border: 1px solid #E0E0E0 ;
+	border-radius: 5px;
+	padding: 2px;
+	vertical-align: middle;
+	width: 90px;
+}
+.event-details span {
+	font-size: 13px;
+  	overflow: hidden;
+  	text-overflow: ellipsis;
+}
+
+time.icon
+{
+  font-size: 10px;
+  display: block;
+  position: relative;
+  width: 50px;
+  height: 45px;
+  background-color: #fff;
+  border-radius: 7px;
+  box-shadow: 0 5px 0 #bdbdbd, 0 0 0 1px #bdbdbd;
+  overflow: hidden;
+  float: left;
+  margin-right: 5px;
+}
+time.icon *
+{
+  display: block;
+  width: 100%;
+  font-size: 10px;
+  font-weight: bold;
+  font-style: normal;
+  text-align: center;
+}
+time.icon strong
+{
+  position: absolute;
+  top: 0;
+  color: #fff;
+  background-color: #0066cc;
+  box-shadow: 0 2px 0 #0066cc;
+}
+time.icon em
+{
+  position: absolute;
+  bottom: 0.3em;
+  color: #0066cc;
+}
+time.icon span
+{
+  font-size: 15px;
+  letter-spacing: -0.05em;
+  padding-top: 12px;
+  margin-left: 0;
+  color: #2f2f2f;
+}
+
+/*
+ * News Items Detail
+ */
+.news_table {
+    display:table;
+    width:100%;
+    margin-top:13px;
+}
+
+.news_row {
+    display:table-row;
+}
+
+.news_cell {
+    display:table-cell;
+}
+
+/*
+ * Rotation Days
+ */
+.tablet_holder {
+  padding:3px;
+}
+.tablet {
+  border: 2px solid #a0a0a0; 
+  border-radius: 10px; 
+  height:70px;
+}
+.tablet_today {
+  border: 2px solid rgba(81, 203, 238, 1);
+  border-radius: 10px; 
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  height:70px;
+}
+.tablet_dayofweek {
+  width:40px; 
+  font-size:14px; 
+  text-align:center;
+}
+.tablet_letter {
+  font-size:20px;
+  text-align:center;
+  color:#0066cc;
+  padding:1px;
+}
+.no_school {
+  color:red;
+  font-size:10px;
+}

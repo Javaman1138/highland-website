@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block main_content %}
+<link href='/static/calendar/fullcalendar.css' rel='stylesheet' />
+<link href='/static/calendar/fullcalendar.print.css' rel='stylesheet' media='print' />
+<script src='/static/calendar/moment.min.js'></script>
+<script src='/static/calendar/fullcalendar.js'></script>
+<script>
+$(document).ready(function(){
+	openCalendar();
+});
+</script>
+<div id='calendar'></div>
+<div id='color_key'>
+<br><br>
+<table><tr><td>Color Key:<td><td>&nbsp;</td>
+           <td class='color-pta-meeting'>PTA Meeting</td><td>&nbsp;</td>
+           <td class='color-fundraiser'>Fundraisers</td><td>&nbsp;</td>
+           <td class='color-special-event'>Special Event</td><td>&nbsp;</td>
+           <td class='color-school-calendar'>School Calendar</td><td>&nbsp;</td>
+           <td class='color-cta'>Action Needed</td><td>&nbsp;</td>
+       </tr></table>
+</div>
+  <div id="eventInfoPopup" class="popup">
+  		<span id="closePopup" class="popup-close">CLOSE</span>
+  		<div id="popupContent" class="popup-content">
+			<div id="eventTextPopup"></div>
+			<div id="eventDescPopup"></div>
+			<div id="startDatePopup"></div>
+			<div id="timePopup">
+				<span id="startTimePopup"></span>
+				<span id="endTimePopup"></span>
+			</div>
+  		</div>
+  		<div id="eventGoogleLink" class="popup-bottom">Add to Google Calendar</div>
+  </div>
+{% endblock %}

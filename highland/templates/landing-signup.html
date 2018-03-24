@@ -1,0 +1,28 @@
+{% extends 'header-only.html' %}
+
+{% block main_content %}
+<script>
+var autoResetInterval = 15000;
+</script>
+<div style="margin: auto; width:80%; padding:10px;">
+	<span class="title">Sign Up for our online newsletter and event reminders!</span>
+	<div style="float:right;">
+	<img src="/static/images/newsletter.jpg" style="width:200px">
+	</div>
+	<p align="left">
+		Welcome to the Highland Elementary Open House!
+		<br><br>
+		Here you can sign up for reminders and notifications of upcoming events at
+		Highland.
+	</p>
+	<br>
+	{% autoescape off %}{{ signup_view }}{% endautoescape %}
+	<p align="left">
+		The number one reason for the Parent Teacher Association is to 
+		benefit your child. In doing so, you also help your school. 
+		<br><br>
+		To Join the PTA, or to volunteer with a committee, please visit 
+		our tables in the Highland gym.
+	</p>
+</div>
+{% endblock %}
